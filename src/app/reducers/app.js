@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux-immutable';
-import Immutable from 'immutable';
-
-const initialState = () => Immutable.fromJS({});
+import blog from './blog';
+import form from './form';
 
 const app = combineReducers({
-  data: initialState
+  blog,
+  form
 });
 
 export default app;
