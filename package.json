@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack/webpack-dev.config.js --watch --colors",
-    "dev-server": "nodemon ./server/index.js",
+    "dev-server": "nodemon ./server.js",
     "build": "rm -rf dist && webpack --config ./webpack/webpack-prod.config.js --colors",
     "start": "npm run build && node ./server.js",
     "lint": "eslint src server webpack"
