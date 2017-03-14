@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(express.static('./'));
-app.use(express.static('dist'));
+app.use('/scripts', express.static(`${__dirname}/dist/scripts`));
+app.use('/styles', express.static(`${__dirname}/dist/styles`));
 
-app.get(`${__dirname}`, (req, res) => {
+app.get(`/`, (req, res) => {
   res.sendFile(`${__dirname}/dist/index.html`);
 });
 
