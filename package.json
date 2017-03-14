@@ -6,7 +6,8 @@
     "dev-server": "nodemon ./server.js",
     "build": "rm -rf dist && webpack --config ./webpack/webpack-prod.config.js --colors",
     "start": "npm run build && node ./server.js",
-    "lint": "eslint src server webpack"
+    "lint": "eslint src server webpack",
+
   },
   "repository": "https://github.com/MaciejJaroszewski/comment_system_react_redux.git",
   "author": "maciej.k.jaroszewski <maciej.k.jaroszewski@gmail.com>",
@@ -33,11 +34,11 @@
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "express": "^4.13.4",
+    "webpack": "^1.13.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-immutable-proptypes": "^2.1.0",
