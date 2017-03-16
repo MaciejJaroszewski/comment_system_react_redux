@@ -1,7 +1,7 @@
 import React , { PropTypes } from 'react';
 import { Card, Button } from 'react-materialize';
 
-const Post = ({ index, content, date, counter }) => {
+const Post = ({ index, content, date, counter, onAddCounter, onRemoveCounter }) => {
   const formatedDate = new Date(date);
   const counterStyles = {
     margin: '0 10px',
@@ -12,9 +12,9 @@ const Post = ({ index, content, date, counter }) => {
   };
   const voteButtons = (
     <div key={index}>
-      <Button floating waves="light">+</Button>
+      <Button floating waves="light" onClick={onAddCounter}>+</Button>
       <span style={counterStyles}>{ counter }</span>
-      <Button floating waves="light" className="red">-</Button>
+      <Button floating waves="light" className="red" onClick={onRemoveCounter}>-</Button>
     </div>
   );
 

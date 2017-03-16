@@ -20,7 +20,9 @@ class App extends React.Component {
     if (posts.size) {
       return posts.map((post, index) => (
         <Post key={index} content={post.get('content')}
-              date={post.get('date')} counter={post.get('votes')} />
+              date={post.get('date')} counter={post.get('votes')}
+              onAddCounter={() => this.props.incrementCounter(index)}
+              onRemoveCounter={() => this.props.decrementCounter(index)} />
       ));
     }
   }
@@ -56,12 +58,16 @@ App.propTypes = {
   form: ImmutablePropTypes.map,
 
   addPost: PropTypes.func.isRequired,
-  updateInput: PropTypes.func.isRequired
+  updateInput: PropTypes.func.isRequired,
+  incrementCounter: PropTypes.func.isRequired,
+  decrementCounter: PropTypes.func.isRequired
 };
 
 export default connect(
   mapStateToProps, {
     addPost,
-    updateInput
+    updateInput,
+    incrementCounter,
+    decrementCounter
   }
 )(App);
