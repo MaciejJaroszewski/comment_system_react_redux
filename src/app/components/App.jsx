@@ -4,7 +4,7 @@ import { Row, Col, Modal, Button, Input } from 'react-materialize';
 import Post from './Post';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { getPosts, getForm } from '../selectors';
-import { updateInput, addPost } from '../actions';
+import { updateInput, addPost, incrementCounter, decrementCounter } from '../actions';
 
 class App extends React.Component {
   renderForm() {
@@ -18,7 +18,10 @@ class App extends React.Component {
 
   renderPost(posts) {
     if (posts.size) {
-      return posts.map((post, index) => <Post key={index} content={post.get('content')} date={post.get('date')} />);
+      return posts.map((post, index) => (
+        <Post key={index} content={post.get('content')}
+              date={post.get('date')} counter={post.get('votes')} />
+      ));
     }
   }
 
